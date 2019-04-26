@@ -17,12 +17,18 @@
 // libs
 require_once 'libs/fallback.php';
 require_once 'classes/class.admin-bar.php';
+require_once 'classes/class.page-setting.php';
+
 // menu
-
-
-function shifter_add_admin_bar_content() {
+add_action("wp_before_admin_bar_render", function () {
   global $wp_admin_bar;
   $Shifter_Admin_Bar = new Admin_Bar($wp_admin_bar);
   $wp_admin_bar = $Shifter_Admin_Bar->add_menu()->get_wp_admin_bar();
-}
-add_action("wp_before_admin_bar_render", 'shifter_add_admin_bar_content');
+});
+
+// Setting pages
+add_action( 'init', function () {
+  // add menu
+  if ( ! is_admin() ) return;
+  new Shifter_Webhook\Page_Settings();
+});
