@@ -13,3 +13,16 @@
  */
 
 // Your code starts here.
+
+// libs
+require_once 'libs/fallback.php';
+require_once 'classes/class.admin-bar.php';
+// menu
+
+
+function shifter_add_admin_bar_content() {
+  global $wp_admin_bar;
+  $Shifter_Admin_Bar = new Admin_Bar($wp_admin_bar);
+  $wp_admin_bar = $Shifter_Admin_Bar->add_menu()->get_wp_admin_bar();
+}
+add_action("wp_before_admin_bar_render", 'shifter_add_admin_bar_content');
