@@ -18,7 +18,6 @@ class Page_Settings {
   public function register_setting_fields() {
     foreach ( $this->options as $group => $options ) {
       foreach ( $options as $option ) {
-        var_dump( $group, $option['key'] );
         register_setting( $group, $option['key'], $option['sanitize_callback'] );
       }
     }
