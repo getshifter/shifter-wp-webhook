@@ -35,6 +35,27 @@ add_action( 'init', function () {
   new Shifter_Webhook\Page_Settings();
 });
 
+// API
 add_action( 'rest_api_init', function () {
   new Shifter_Webhook\Rest_API();
 } );
+
+
+add_action('wp_enqueue_scripts', 'add_shifter_webhook_scripts' );
+add_action('admin_enqueue_scripts', 'add_shifter_webhook_scripts' );
+
+function shifter_webhook_configured ( $webhook_url ) {
+  $filtered_url = filter_var( $webhook_url, FILTER_VALIDATE_URL );
+  if ( $filtered_url === false ) return '';
+  return 'true';
+}
+
+function add_shifter_webhook_scripts() {
+  $shifter_webhook = plugins_url( 'libs/scripts.js', __FILE__ );
+  if ( is_user_logged_in() ) {
+    wp_enqueue_script( 'wp-api' );
+    wp_enqueue_script( "shifter-webhook-js", $shifter_webhook, array( 'jquery', 'wp-api' ), rand());
+    $webhook_url = get_option( 'shifter_webhook_url' );
+    wp_localize_script( 'shifter-webhook-js', 'Shifter_Webhook', array( 'hasWebhook' => shifter_webhook_configured( $webhook_url ) ) );
+  }
+}

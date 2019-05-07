@@ -13,7 +13,7 @@ class Rest_API {
       'webhook',
       array(
         "methods" => "POST",
-        // 'permission_callback' => array( $this, 'permission_check' ),
+        'permission_callback' => array( $this, 'permission_check' ),
         "callback" => array( $this, 'invoke_webhook' )
       )
     );
