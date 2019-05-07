@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name:     Shifter Wp Webhook
- * Plugin URI:      PLUGIN SITE HERE
- * Description:     PLUGIN DESCRIPTION HERE
- * Author:          YOUR NAME HERE
- * Author URI:      YOUR SITE HERE
+ * Plugin URI:      https://github.com/getshifter/shifter-wp-webhook
+ * Description:     Simple webhook execution
+ * Author:          DigitalCube
+ * Author URI:      https://getshifter.io
  * Text Domain:     shifter-wp-webhook
  * Domain Path:     /languages
  * Version:         0.1.0
