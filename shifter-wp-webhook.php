@@ -16,8 +16,10 @@
 
 // libs
 require_once 'libs/fallback.php';
+require_once 'classes/class.logger.php';
 require_once 'classes/class.admin-bar.php';
 require_once 'classes/class.page-setting.php';
+require_once 'classes/class.rest-api.php';
 
 // menu
 add_action("wp_before_admin_bar_render", function () {
@@ -32,3 +34,7 @@ add_action( 'init', function () {
   if ( ! is_admin() ) return;
   new Shifter_Webhook\Page_Settings();
 });
+
+add_action( 'rest_api_init', function () {
+  new Shifter_Webhook\Rest_API();
+} );
