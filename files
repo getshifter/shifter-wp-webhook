@@ -1,0 +1,7 @@
+./shifter-wp-webhook.php
+./classes/class.logger.php
+./classes/class.admin-bar.php
+./classes/class.page-setting.php
+./classes/class.rest-api.php
+./libs/fallback.php
+./libs//scripts.js
