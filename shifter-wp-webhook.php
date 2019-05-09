@@ -54,7 +54,7 @@ function add_shifter_webhook_scripts() {
   $shifter_webhook = plugins_url( 'libs/scripts.js', __FILE__ );
   if ( is_user_logged_in() ) {
     wp_enqueue_script( 'wp-api' );
-    wp_enqueue_script( "shifter-webhook-js", $shifter_webhook, array( 'jquery', 'wp-api' ), rand());
+    wp_enqueue_script( "shifter-webhook-js", $shifter_webhook, array( 'jquery', 'wp-api' ), '20190507');
     $webhook_url = get_option( 'shifter_webhook_url' );
     wp_localize_script( 'shifter-webhook-js', 'Shifter_Webhook', array( 'hasWebhook' => shifter_webhook_configured( $webhook_url ) ) );
   }
