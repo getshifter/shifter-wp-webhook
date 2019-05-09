@@ -60,10 +60,12 @@ function postWebhook() {
         )
       } )
   } ).catch( function( err ) {
+    console.log(err)
+    console.log(JSON.stringify(err.responseJSON, null, 2))
     swal(
       'Failed to execute',
       [
-        err.responseJSON ? err.responseJSON.result || 'Internal Error' : 'Internal Error'
+        err.responseJSON ? `<pre style="text-align: left; overflow: scroll;">${JSON.stringify(err.responseJSON, null, 2)}</pre>`|| 'Internal Error' : 'Internal Error'
       ].join('<br/>'),
       'error'
     )

@@ -53,7 +53,7 @@ class Page_Content {
     $option = $this->options[ $key ];
     $webhook_url = get_option( 'shifter_webhook_url' );
     $webhook_content_type = get_option( 'shifter_webhook_content_type' );
-      $webhook_content_type = $webhook_content_type ? $webhook_content_type : 'application/x-www-form-urlencoded';
+    $webhook_content_type = $webhook_content_type ? $webhook_content_type : 'application/x-www-form-urlencoded';
     $body = array(
             "CONTAINER_URL" => esc_url( get_option( 'home' ) ),
     );
