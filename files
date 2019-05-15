@@ -4,4 +4,5 @@
 ./classes/class.page-setting.php
 ./classes/class.rest-api.php
 ./libs/fallback.php
+./uninstall.php
 ./libs//scripts.js
