@@ -7,7 +7,7 @@
  * Author URI:      https://getshifter.io
  * Text Domain:     shifter-wp-webhook
  * Domain Path:     /languages
- * Version:         0.3.0
+ * Version:         0.3.1
  *
  * @package         Shifter_Wp_Webhook
  */
