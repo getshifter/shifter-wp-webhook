@@ -26,7 +26,7 @@ msgstr ""
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
 #: classes/class.admin-bar.php:10
-msgid "Send webhok"
+msgid "Send webhook(Beta)"
 msgstr ""
 
 #: classes/class.page-setting.php:11
