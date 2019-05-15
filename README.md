@@ -24,6 +24,12 @@ This section describes how to install the plugin and get it working.
 
 ## Changelog ##
 
+## 0.3.0 ##
+
+- [content-type selectable by hideokamoto | Pull Request #2](https://github.com/getshifter/shifter-wp-webhook/pull/2)
+- [fix: json encode the request body if application/json selected by hideokamoto | Pull Request #3](https://github.com/getshifter/shifter-wp-webhook/pull/3)
+
+
 ## 0.2.0 ##
 Public Beta Release
 
