@@ -18,14 +18,21 @@ class Rest_API {
       )
     );
   }
-  public function createRequest( string $home_url, string $content_type ) {
+  private function _create_request_body( string $home_url, string $content_type ) {
+    $content = array(
+      "CONTAINER_URL" => $home_url,
+    );
+    if ( $content_type === 'application/json') {
+      return json_encode( $content );
+    }
+    return $content;
+  }
+  private function _create_request( string $home_url, string $content_type ) {
     return array(
         'headers' => array(
             'Content-Type' => $content_type
         ),
-      'body' => array(
-        "CONTAINER_URL" => $home_url,
-      ),
+      'body' => $this->_create_request_body( $home_url, $content_type ),
     );
   }
   public function invoke_webhook() {
@@ -33,7 +40,7 @@ class Rest_API {
     $home_url = get_option( 'home' );
     $webhook_content_type = get_option( 'shifter_webhook_content_type' );
     $webhook_content_type = $webhook_content_type ? $webhook_content_type : 'application/x-www-form-urlencoded';
-    $request = $this->createRequest( $home_url, $webhook_content_type );
+    $request = $this->_create_request( $home_url, $webhook_content_type );
     Log::info('Invoke webhook request: ' . json_encode( $request ));
     $result = wp_remote_post( $webhook_url, $request );
     if ( is_wp_error( $result ) ) {
