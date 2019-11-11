@@ -7,7 +7,7 @@ class Admin_Bar {
   public function add_menu() {
     $shifter_support_generate = array(
       "id"    => "send-webhook",
-      "title" => __( 'Send webhook(Beta)', 'shifter-wp-webhook' ),
+      "title" => __( 'Send webhook', 'shifter-wp-webhook' ),
       "parent" => "shifter",
       "href" => "#"
     );
