@@ -40,7 +40,7 @@ class Page_Settings {
     add_submenu_page(
       'shifter',
       'Outbound Webhook Settings',
-      'Webhook (Beta)',
+      'Webhook',
       'manage_options',
       'shifter-webhook',
       array( $Content, 'shifter_webhook_settings_page' )

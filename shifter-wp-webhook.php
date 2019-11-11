@@ -2,12 +2,12 @@
 /**
  * Plugin Name:     Shifter Wp Webhook
  * Plugin URI:      https://github.com/getshifter/shifter-wp-webhook
- * Description:     Simple webhook execution (Public Beta)
+ * Description:     Simple webhook execution
  * Author:          DigitalCube
  * Author URI:      https://getshifter.io
  * Text Domain:     shifter-wp-webhook
  * Domain Path:     /languages
- * Version:         0.3.2
+ * Version:         1.0.0
  *
  * @package         Shifter_Wp_Webhook
  */
