@@ -12,21 +12,34 @@ class Page_Settings {
           'label' => __( 'Webhook URL', 'shifter-wp-webhook' ),
           "default" => '',
         ),
-          array(
-            "key" => "shifter_webhook_content_type",
-            "form_type" => "select",
-            "sanitize_callback" => 'esc_attr',
-            'label' => __( 'Content-Type', 'shifter-wp-webhook'),
-            "default" => 'application/json',
-            'options' => array(
-              'application/x-www-form-urlencoded',
-              'application/json'
-            )
+        array(
+          "key" => "shifter_webhook_content_type",
+          "form_type" => "select",
+          "sanitize_callback" => 'esc_attr',
+          'label' => __( 'Content-Type', 'shifter-wp-webhook'),
+          "default" => 'application/json',
+          'options' => array(
+            'application/x-www-form-urlencoded',
+            'application/json'
           )
+        ),
+        array(
+            "key" => "shifter_webhook_send_on_boot",
+            "form_type" => "boolean",
+            "sanitize_callback" => array( $this, 'esc_boolean' ),
+            'label' => __( 'Send on boot', 'shifter-wp-webhook'),
+            "default" => "0"
+        )
       ]
     ];
     add_action( 'admin_menu', array( $this, 'register_pages' ) );
     add_action( 'admin_init', array( $this, 'register_setting_fields' ) );
+  }
+  public function esc_boolean( $value ) {
+    if ( ! isset( $value ) || '1' !== $value ) {
+      $value = '0';
+    }
+    return $value;
   }
   public function register_setting_fields() {
     foreach ( $this->options as $group => $options ) {
@@ -103,6 +116,15 @@ class Page_Content {
           }
         ?>
       </select>
+      <?php
+    } else if ( 'boolean' === $item['form_type'] ) {
+      ?>
+      <input
+        type="checkbox"
+        name="<?php echo $name ?>"
+        value="1" 
+        <?php checked( "1", $current_value ); ?>
+      />
       <?php
     } else {
       ?>
