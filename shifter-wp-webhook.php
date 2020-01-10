@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Shifter Wp Webhook
+ * Plugin Name:     Shifter WP Webhook
  * Plugin URI:      https://github.com/getshifter/shifter-wp-webhook
  * Description:     Simple webhook execution
  * Author:          DigitalCube
