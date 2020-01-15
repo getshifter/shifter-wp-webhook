@@ -29,6 +29,13 @@ class Page_Settings {
             "sanitize_callback" => array( $this, 'esc_boolean' ),
             'label' => __( 'Send on boot', 'shifter-wp-webhook'),
             "default" => "0"
+        ),
+        array(
+            "key" => "shifter_webhook_send_with_login_url",
+            "form_type" => "boolean",
+            "sanitize_callback" => array( $this, 'esc_boolean' ),
+            'label' => __( 'Send with passwordless login URL', 'shifter-wp-webhook'),
+            "default" => "0"
         )
       ]
     ];
