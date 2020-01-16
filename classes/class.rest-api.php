@@ -20,7 +20,7 @@ class Rest_API {
   }
   private function _create_request_body( string $home_url, string $content_type ) {
     $content_urls = new RequestContent();
-    $body = $content_urls->get_body_by_email( 'hoge@example.com' );
+    $body = $content_urls->get_body_by_email();
     if ( $content_type === 'application/json') {
       return json_encode( $body );
     }
