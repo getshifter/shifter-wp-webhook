@@ -19,13 +19,12 @@ class Rest_API {
     );
   }
   private function _create_request_body( string $home_url, string $content_type ) {
-    $content = array(
-      "CONTAINER_URL" => $home_url,
-    );
+    $content_urls = new RequestContent();
+    $body = $content_urls->get_body_by_email();
     if ( $content_type === 'application/json') {
-      return json_encode( $content );
+      return json_encode( $body );
     }
-    return $content;
+    return $body;
   }
   private function _create_request( string $home_url, string $content_type ) {
     return array(

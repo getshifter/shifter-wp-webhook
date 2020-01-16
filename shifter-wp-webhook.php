@@ -17,8 +17,11 @@
 // libs
 require_once 'libs/fallback.php';
 require_once 'classes/class.logger.php';
+require_once 'classes/class.passwordless.php';
+require_once 'classes/class.request.php';
 require_once 'classes/class.admin-bar.php';
 require_once 'classes/class.page-setting.php';
+require_once 'classes/class.page-content.php';
 require_once 'classes/class.rest-api.php';
 
 // menu
