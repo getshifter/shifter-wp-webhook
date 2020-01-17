@@ -1,8 +1,12 @@
 ./shifter-wp-webhook.php
 ./classes/class.logger.php
+./classes/class.request.php
+./classes/class.page-content.php
 ./classes/class.admin-bar.php
+./classes/class.passwordless.php
 ./classes/class.page-setting.php
 ./classes/class.rest-api.php
 ./libs/fallback.php
 ./uninstall.php
 ./libs//scripts.js
+./languages//shifter-wp-webhook.pot
