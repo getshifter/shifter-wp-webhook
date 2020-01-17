@@ -43,7 +43,7 @@ class RequestContent {
     $email = $this->get_email( $email );
     if ( ! $email ) return $base;
     $passwordless_url = $this->passwordless->get_url_by_email( $email );
-    $this->push_login_magic_link( $base );
+    return $this->push_login_magic_link( $base, $passwordless_url );
   }
   public function get_body_data() {
     $container_url = esc_url( get_option( 'home' ) );
