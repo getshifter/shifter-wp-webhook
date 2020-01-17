@@ -24,7 +24,7 @@ class RequestContent {
   public function get_body_by_current_user() {
     $base = $this->get_base_body();
     $should_add_passwordless = get_option( 'shifter_webhook_send_with_login_url' );
-    if ( ! $should_add_passwordles ) return $base;
+    if ( ! $should_add_passwordless ) return $base;
     $passwordless_url = $this->passwordless->get_url_by_current_user();
     return $this->push_login_magic_link( $base, $passwordless_url );
   }
@@ -39,7 +39,7 @@ class RequestContent {
   public function get_body_by_email( string $email = null ) {
     $base = $this->get_base_body();
     $should_add_passwordless = get_option( 'shifter_webhook_send_with_login_url' );
-    if ( ! $should_add_passwordles ) return $base;
+    if ( ! $should_add_passwordless ) return $base;
     $email = $this->get_email( $email );
     if ( ! $email ) return $base;
     $passwordless_url = $this->passwordless->get_url_by_email( $email );
