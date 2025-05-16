@@ -1,6 +1,8 @@
 <?php
 
 class Admin_Bar {
+  /** @var \WP_Admin_Bar */
+  protected $wp_admin_bar;
   public function __construct($bar) {
     $this->wp_admin_bar = $bar;
   }
