@@ -32,7 +32,7 @@ class Page_Content {
         -H "Content-Type: <?php echo esc_attr( $webhook_content_type ); ?>"
         <?php echo $this->get_body( $webhook_content_type ); ?></>
     </p>
-    <?
+    <?php
   }
   public function get_option( string $key, string $form_type, string $default ) {
     $value = get_option( $key );
@@ -134,6 +134,6 @@ class Page_Content {
           <?php $this->get_form( $webhook_url, $webhook_content_type ); ?>
       </div>
     </div>
-    <?
+    <?php
   }
 }
