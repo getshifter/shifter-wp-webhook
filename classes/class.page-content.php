@@ -30,7 +30,7 @@ class Page_Content {
     <p>
         $ curl <?php echo esc_url( $webhook_url ? $webhook_url : 'https://example.com' ); ?> -XPOST
         -H "Content-Type: <?php echo esc_attr( $webhook_content_type ); ?>"
-        <?php echo $this->get_body( $webhook_content_type ); ?></>
+        <?php echo $this->get_body( $webhook_content_type ); ?></p>
     </p>
     <?php
   }
@@ -72,7 +72,7 @@ class Page_Content {
       <input
         type="checkbox"
         name="<?php echo $name ?>"
-        value="1" 
+        value="1"
         <?php checked( "1", $current_value ); ?>
       />
       <?php
