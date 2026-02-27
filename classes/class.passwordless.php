@@ -2,6 +2,9 @@
 namespace Shifter_Webhook;
 
 class PasswordlessUtils {
+  /** @var mixed */
+  protected $one_login;
+
   public function __construct() {
     $onelogin_file_path = WPMU_PLUGIN_DIR . '/shifter-artifact-helper/include/class-shifter-onelogin.php';
     if ( ! file_exists( $onelogin_file_path ) ) {
@@ -12,7 +15,7 @@ class PasswordlessUtils {
       $this->one_login = \ShifterOneLogin::get_instance();
     }
   }
-  private function get_magic_link( string $username , string $email = null ) {
+  private function get_magic_link( string $username , $email = null ) {
     if ( ! $this->one_login ) return null;
     return $this->one_login->magic_link( $username, $email );
   }

@@ -2,6 +2,9 @@
 namespace Shifter_Webhook;
 
 class Page_Settings {
+  /** @var array */
+  protected $options = array();
+
   public function __construct() {
     $this->options = [
       'shifter_webhook_settings' => [
